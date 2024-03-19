@@ -1,0 +1,148 @@
+body::before {
+    display: block;
+    position: fixed;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('/img/ms_bg.svg') no-repeat fixed center/cover !important;
+    transform: rotateX(180deg);
+    opacity: .75;
+    pointer-events: none;
+    /* backdrop-filter: blur(3rem); */
+}
+
+/* #nav.show {
+    background: #0001;
+    backdrop-filter: blur(1rem);
+} */
+
+#nav .site-page,
+#subtitle,
+#post-info {
+    text-shadow: 0.05rem 0.05rem 0.05rem #000c;
+}
+
+#site-title {
+    text-shadow: 0.05rem 0.05rem 0.05rem #000c !important;
+}
+
+header::before,
+footer::before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('/img/lz2.png') repeat fixed !important;
+}
+
+[data-theme='light']
+header::before,
+[data-theme='light']
+footer::before {
+    filter: opacity(.75);
+    backdrop-filter: blur(.05rem);
+}
+
+[data-theme='dark']
+header::before,
+[data-theme='dark']
+footer::before {
+    filter: opacity(.75) brightness(0) contrast(100);
+    backdrop-filter: blur(.05rem);
+} 
+
+footer{
+    text-shadow: 0.05rem 0.05rem 0.05rem #000c !important;
+}
+
+.card-info:hover:before {
+    display: block;
+}
+
+.card-info:before {
+    display: none;
+    position: absolute;
+    content: "";
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    pointer-events: none;
+    background: Url('/img/snow.gif') repeat top center !important;
+}
+
+.flink-list-item::before {
+    background: none !important;
+}
+
+.avatar-img img,
+.flink-list-item img,
+#vcomment .vimg,
+#article-container.post-content ol li:before {
+    transition: none !important;
+}
+
+.card-widget,
+#post,
+#page,
+#archive {
+    position: relative;
+    overflow: hidden;
+    background: #fff1 !important;
+    backdrop-filter: blur(3rem);
+}
+
+#aside-content .card-categories ul.card-category-list>.card-category-list-item a:hover {
+    color: var(--preloader-color);
+}
+
+.post_cover {
+    position: relative;
+}
+
+.post_cover::before {
+    display: block;
+    position: absolute;
+    content: " ";
+    top: -20px;
+    right: -20px;
+    bottom: -20px;
+    left: -20px;
+    background: url('/img/lz2.png') repeat fixed !important;
+    pointer-events: none;
+    z-index: 1;
+}
+
+[data-theme='light']
+.post_cover::before {
+    filter: opacity(.45);
+    backdrop-filter: blur(.02rem);
+}
+
+[data-theme='dark']
+.post_cover::before {
+    filter: opacity(.45) brightness(0) contrast(100);
+    backdrop-filter: blur(.07rem);
+} 
+
+@media screen and (min-width: 769px) {
+    .post_cover.left::before{
+        right: 11px;
+        transform:rotate(-5deg);
+    }
+    .post_cover.right::before{
+        left: 11px;
+        transform:rotate(-5deg);
+    }
+    .post_cover.left {
+        clip-path: polygon(0 0, 94% 0%, 100% 100%, 0% 100%);
+    }
+    .post_cover.right {
+        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 6% 100%);
+    }
+}
